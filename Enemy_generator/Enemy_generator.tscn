@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Enemy_generator/Enemy_generator.gd" type="Script" id=1]
+[ext_resource path="res://Enemies/Enemy_2/Enemy_2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Enemies/Enemy_3/Enemy_3.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Enemies/Enemy_1/Enemy_1.tscn" type="PackedScene" id=4]
+
+[node name="Enemy_generator" type="Position2D"]
+script = ExtResource( 1 )
+enemy_number = 3
+enemy_1 = ExtResource( 4 )
+enemy_2 = ExtResource( 2 )
+enemy_3 = ExtResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

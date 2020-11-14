@@ -1,0 +1,70 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://World/World.gd" type="Script" id=2]
+[ext_resource path="res://Enemy_generator/Enemy_generator.tscn" type="PackedScene" id=3]
+[ext_resource path="res://UI/Player_health/player_health.png" type="Texture" id=4]
+[ext_resource path="res://UI/Player_health/Player_health.gd" type="Script" id=5]
+[ext_resource path="res://Sounds/shoot.wav" type="AudioStream" id=6]
+[ext_resource path="res://Sounds/Sound_controller.gd" type="Script" id=7]
+[ext_resource path="res://Sounds/explosion.wav" type="AudioStream" id=8]
+[ext_resource path="res://Sounds/hit.wav" type="AudioStream" id=9]
+[ext_resource path="res://UI/Font/Font.tres" type="DynamicFont" id=10]
+[ext_resource path="res://UI/Player_score/Player_score.gd" type="Script" id=11]
+[ext_resource path="res://Backgrounds/Star_background_1.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Backgrounds/Star_background_3.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Backgrounds/Star_background_2.tscn" type="PackedScene" id=14]
+
+[node name="World" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 13, 0 )
+
+[node name="Enemy_generator" parent="." instance=ExtResource( 3 )]
+position = Vector2( 150, 0 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Player_health" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 18, 84 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 4 )
+hframes = 4
+frame = 3
+script = ExtResource( 5 )
+
+[node name="Player_score" type="Label" parent="CanvasLayer"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -85.0
+margin_top = -18.0
+custom_fonts/font = ExtResource( 10 )
+text = "Score: 0"
+align = 2
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Star_background_1" parent="CanvasLayer" instance=ExtResource( 12 )]
+
+[node name="Star_background_2" parent="CanvasLayer" instance=ExtResource( 14 )]
+
+[node name="Star_background_3" parent="CanvasLayer" instance=ExtResource( 13 )]
+
+[node name="Sound_controller" type="Node" parent="."]
+script = ExtResource( 7 )
+
+[node name="Shoot" type="AudioStreamPlayer" parent="Sound_controller"]
+stream = ExtResource( 6 )
+
+[node name="Explosion" type="AudioStreamPlayer" parent="Sound_controller"]
+stream = ExtResource( 8 )
+
+[node name="Hit" type="AudioStreamPlayer" parent="Sound_controller"]
+stream = ExtResource( 9 )
+[connection signal="instance_node" from="Player" to="." method="instance_node"]
+[connection signal="instance_node" from="Enemy_generator" to="." method="instance_node"]

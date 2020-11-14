@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://UI/Font/Font_small.tres" type="DynamicFont" id=1]
+[ext_resource path="res://UI/Font/Font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://UI/Title_screen/Button_start.gd" type="Script" id=3]
+[ext_resource path="res://UI/Theme/Theme.tres" type="Theme" id=4]
+
+[node name="Title_screen" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+margin_right = 160.0
+margin_bottom = 90.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button_start" type="Button" parent="Control"]
+margin_left = 60.0
+margin_top = 54.0
+margin_right = 96.0
+margin_bottom = 70.0
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 1 )
+text = "Start"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title_text" type="Label" parent="Control"]
+margin_left = 40.0
+margin_top = 15.0
+margin_right = 119.0
+margin_bottom = 33.0
+custom_fonts/font = ExtResource( 2 )
+text = "Space Game"
+[connection signal="pressed" from="Control/Button_start" to="Control/Button_start" method="_on_Button_start_pressed"]

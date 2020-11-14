@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Backgrounds/Star_background_1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Backgrounds/Star_background_2.png" type="Texture" id=2]
+
+[node name="Star_background_2" instance=ExtResource( 1 )]
+speed = 45
+
+[node name="Sprite" parent="ParallaxLayer" index="0"]
+texture = ExtResource( 2 )

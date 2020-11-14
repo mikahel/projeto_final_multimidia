@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Enemies/Enemy_1/Enemy_1.gd" type="Script" id=1]
+[ext_resource path="res://Enemies/Enemy_1/Enemy1.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 5, 2 )
+
+[node name="Enemy_1" type="Sprite"]
+texture = ExtResource( 2 )
+flip_h = true
+script = ExtResource( 1 )
+health = 2
+
+[node name="Hitbox" type="Area2D" parent="." groups=[
+"Enemy",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+visible = false
+shape = SubResource( 1 )
+[connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
