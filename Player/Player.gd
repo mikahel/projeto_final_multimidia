@@ -36,6 +36,13 @@ func _on_Hitbox_area_entered(area):
 		area.get_parent().emit_signal("instance_node", area.get_parent().particles, area.get_parent().global_position)
 		area.get_parent().queue_free()
 		health -= 1
+	elif area.is_in_group("Dropped_items"):
+		area.get_parent().queue_free()
+		var item_name = area.get_parent().get_name()
+		if item_name == "Item_1":
+			health += 1
+		elif item_name == "Item_2":
+			Global.score += 10
 
 func _on_Reload_timer_timeout():
 	can_shoot = true
