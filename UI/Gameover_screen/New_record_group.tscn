@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/Font/Font_small.tres" type="DynamicFont" id=1]
+[ext_resource path="res://UI/Gameover_screen/Player_name.gd" type="Script" id=2]
+
+[node name="New_record_group" type="Node"]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 8.72726
+margin_top = 49.0636
+margin_right = 155.727
+margin_bottom = 58.0636
+custom_fonts/font = ExtResource( 1 )
+text = "NEW RECORD!!! Enter your name"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player_name" type="LineEdit" parent="."]
+margin_left = 9.1727
+margin_top = 61.9816
+margin_right = 156.173
+margin_bottom = 80.9816
+custom_fonts/font = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="text_entered" from="Player_name" to="Player_name" method="_on_Player_name_text_entered"]

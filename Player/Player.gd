@@ -40,7 +40,10 @@ func _on_Hitbox_area_entered(area):
 		area.get_parent().queue_free()
 		var item_name = area.get_parent().get_name()
 		if item_name == "Item_1":
-			health += 1
+			if health < 3:
+				health += 1
+			else:
+				Global.score += 20
 		elif item_name == "Item_2":
 			Global.score += 10
 

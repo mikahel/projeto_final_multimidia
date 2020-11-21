@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://UI/Font/Font_small.tres" type="DynamicFont" id=1]
-[ext_resource path="res://UI/Title_screen/Button_start.gd" type="Script" id=3]
+[ext_resource path="res://UI/Menu_screen/Button_start.gd" type="Script" id=2]
+[ext_resource path="res://UI/Menu_screen/Button_scores.gd" type="Script" id=3]
 [ext_resource path="res://UI/Title_screen/large_thumbnail.webp" type="Texture" id=5]
 
-[node name="Title_screen" type="Node2D"]
+[node name="Menu_screen" type="Node2D"]
 
 [node name="Control" type="Control" parent="."]
 margin_right = 160.0
@@ -14,22 +15,38 @@ __meta__ = {
 }
 
 [node name="Background" type="Sprite" parent="Control"]
-position = Vector2( 79.8781, 45 )
+position = Vector2( 80, 45 )
 scale = Vector2( 0.176092, 0.175197 )
 z_index = -1
 texture = ExtResource( 5 )
 
 [node name="Button_start" type="Button" parent="Control"]
 anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -42.0
+margin_top = -9.0
+margin_right = 42.0
+margin_bottom = 7.0
+custom_fonts/font = ExtResource( 1 )
+text = "Start"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button_scores" type="Button" parent="Control"]
+anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -18.0
-margin_top = -30.0
-margin_right = 18.0
-margin_bottom = -14.0
+margin_left = -42.0
+margin_top = -25.0
+margin_right = 42.0
+margin_bottom = -9.0
 custom_fonts/font = ExtResource( 1 )
-text = "Start"
+text = "Scores"
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -38,10 +55,9 @@ __meta__ = {
 [node name="Title_text" type="Label" parent="Control"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -58.0
-margin_top = 1.0
-margin_right = 58.0
-margin_bottom = 40.0
+margin_left = -34.0
+margin_right = 34.0
+margin_bottom = 23.0
 custom_fonts/font = ExtResource( 1 )
 text = "Escape 
 from 2020"
@@ -50,3 +66,4 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="pressed" from="Control/Button_start" to="Control/Button_start" method="_on_Button_start_pressed"]
+[connection signal="pressed" from="Control/Button_scores" to="Control/Button_scores" method="_on_Button_scores_pressed"]

@@ -21,6 +21,7 @@ run/main_scene="res://UI/Title_screen/Title_screen.tscn"
 [autoload]
 
 Global="*res://Game_managers/Global.gd"
+Savescript="*res://Save/Savescript.gd"
 
 [display]
 
