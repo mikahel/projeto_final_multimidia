@@ -1,7 +1,0 @@
-[gd_scene load_steps=3 format=2]
-
-[ext_resource path="res://Dropped_items/Item_1/Item_1.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Dropped_items/Item_2/24f9e523-1027-46ee-8553-ff1c9b9eba85-Copia_-_Copia-removebg-preview.png" type="Texture" id=2]
-
-[node name="Item_2" instance=ExtResource( 1 )]
-texture = ExtResource( 2 )
