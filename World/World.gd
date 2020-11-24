@@ -5,7 +5,7 @@ func _ready():
 	
 func _exit_tree():
 	Global.world = null
-
+	
 func instance_node(node, location):
 	var node_instance = node.instance()
 	add_child(node_instance)

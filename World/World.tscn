@@ -52,6 +52,7 @@ __meta__ = {
 }
 
 [node name="Star_background_1" parent="CanvasLayer" instance=ExtResource( 12 )]
+speed = 50
 
 [node name="Star_background_2" parent="CanvasLayer" instance=ExtResource( 14 )]
 

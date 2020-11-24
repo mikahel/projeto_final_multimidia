@@ -10,7 +10,6 @@ signal instance_node(node, location)
 
 func _ready():
 	global_position.y = get_viewport().get_mouse_position().y
-	Global.score = 0
 	Global.player = self
 
 func _exit_tree():
@@ -18,6 +17,7 @@ func _exit_tree():
 
 func _process(delta):
 	global_position.y = lerp(global_position.y, get_viewport().get_mouse_position().y, 0.2)
+	#global_position.x = lerp(global_position.y, get_viewport().get_mouse_position().x, 0.8)
 	
 	if Input.is_action_pressed("shoot") and can_shoot:
 		Global.play_sound("Shoot")
@@ -46,6 +46,11 @@ func _on_Hitbox_area_entered(area):
 				Global.score += 20
 		elif item_name == "Item_2":
 			Global.score += 10
+	elif area.is_in_group("Player_damager"):
+		if health > 1:
+			Global.play_sound("Hit")
+		health -= area.get_parent().damage
+		area.get_parent().queue_free()
 
 func _on_Reload_timer_timeout():
 	can_shoot = true

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Enemy_bullets/Enemy_bullet_2/Sem_título-removebg-preview (2) 1.png" type="Texture" id=1]
+[ext_resource path="res://Enemy_bullets/Enemy_bullet.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 22.9178, 7.10131 )
+
+[node name="Enemy_bullet_2" type="Sprite"]
+position = Vector2( 0.083345, -2.30718 )
+scale = Vector2( 0.165865, 0.149964 )
+z_index = -1
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Hitbox" type="Area2D" parent="." groups=[
+"Player_damager",
+]]
+position = Vector2( 0.950572, 0.700913 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2( -4.3185, 3.16679 )
+shape = SubResource( 1 )

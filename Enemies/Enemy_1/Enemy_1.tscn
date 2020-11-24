@@ -1,25 +1,31 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Enemies/Enemy_1/Enemy_1.gd" type="Script" id=1]
-[ext_resource path="res://Enemies/Enemy_1/ET-removebg-preview 1.png" type="Texture" id=2]
+[ext_resource path="res://Enemies/Enemy_1/Asteroid.png" type="Texture" id=2]
+[ext_resource path="res://Enemy_bullets/Enemy_bullet_1/Enemy_bullet_1.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7.79136, 3.65052 )
+extents = Vector2( 10.1627, 6.33216 )
 
-[node name="Enemy_1" type="Sprite"]
-position = Vector2( -0.10523, -0.140308 )
-scale = Vector2( 0.160006, 0.157908 )
+[node name="Enemy_3" type="Sprite"]
+position = Vector2( -0.016665, -0.0281291 )
+scale = Vector2( 0.123578, 0.0936542 )
 texture = ExtResource( 2 )
 flip_h = true
 script = ExtResource( 1 )
 health = 2
+have_bullets = false
+bullet = ExtResource( 3 )
 
 [node name="Hitbox" type="Area2D" parent="." groups=[
 "Enemy",
 ]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2( -1.18725, -6.72148 )
+position = Vector2( -0.450642, 0.355611 )
 scale = Vector2( 2.66667, 4.67391 )
 shape = SubResource( 1 )
+
+[node name="Reload_timer" type="Timer" parent="."]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
+[connection signal="timeout" from="Reload_timer" to="." method="_on_Reload_timer_timeout"]

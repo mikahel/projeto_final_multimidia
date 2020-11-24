@@ -7,4 +7,5 @@
 speed = 45
 
 [node name="Sprite" parent="ParallaxLayer" index="0"]
+scale = Vector2( 1, 1 )
 texture = ExtResource( 2 )

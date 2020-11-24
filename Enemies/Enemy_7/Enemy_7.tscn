@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Enemies/Enemy_1/Enemy_1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Enemies/Enemy_7/Covid (2).png" type="Texture" id=2]
+
+[node name="Enemy_7" instance=ExtResource( 1 )]
+texture = ExtResource( 2 )
+health = 3
+speed = 65
+point_value = 15
+
+[node name="Hitbox" parent="." index="0" groups=[
+"Insta_kill",
+]]

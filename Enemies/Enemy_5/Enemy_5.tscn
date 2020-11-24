@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Enemies/Enemy_1/Enemy_1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Enemies/Enemy_5/f92945e1d02557f073769c93e7ea8950-removebg-preview.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 29.1614, 37.1006 )
+
+[node name="Enemy_5" instance=ExtResource( 1 )]
+position = Vector2( -0.529472, -0.590857 )
+rotation = 4.71239
+scale = Vector2( 0.0329132, 0.0270155 )
+texture = ExtResource( 2 )
+flip_h = false
+health = 1
+speed = 150
+point_value = 15
+
+[node name="Hitbox" parent="." index="0"]
+position = Vector2( 1.36181, 9.72972 )
+scale = Vector2( 1.1, 1.4 )
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2( 2.56512, -21.5866 )
+scale = Vector2( 2.4, 4.3 )
+shape = SubResource( 1 )

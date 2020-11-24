@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Enemies/Enemy_1/Enemy_1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Enemies/Enemy_4/d1poqkk-3e4c547e-7d1b-4226-a5e8-a20b65135eab-removebg-preview 1.png" type="Texture" id=2]
+[ext_resource path="res://Enemy_bullets/Enemy_bullet_2/Enemy_bullet_2.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 31.0023, 11.2944 )
+
+[node name="Enemy_4" instance=ExtResource( 1 )]
+position = Vector2( -2.33743, -3.35553 )
+scale = Vector2( 0.134309, 0.138699 )
+texture = ExtResource( 2 )
+flip_h = false
+speed = 60
+point_value = 30
+wait_to_shoot = 1.5
+have_bullets = true
+bullet = ExtResource( 3 )
+bullet_type = 2
+
+[node name="Hitbox" parent="." index="0"]
+position = Vector2( -2.66769, -0.0872293 )
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2( 17.3654, -1.2879 )
+shape = SubResource( 1 )
