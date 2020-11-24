@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Brave Pilots (Menu Screen).ogg-e0032e76e2d19a66c68e0a5d6710e377.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Brave Pilots (Menu Screen).ogg"
+dest_files=[ "res://.import/Brave Pilots (Menu Screen).ogg-e0032e76e2d19a66c68e0a5d6710e377.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

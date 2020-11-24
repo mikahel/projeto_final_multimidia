@@ -20,5 +20,12 @@ shape = SubResource( 1 )
 
 [node name="Reload_timer" type="Timer" parent="."]
 wait_time = 0.25
+
+[node name="Bomb_timer" type="Timer" parent="."]
+
+[node name="Invincivility_timer" type="Timer" parent="."]
+wait_time = 10.0
 [connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
 [connection signal="timeout" from="Reload_timer" to="." method="_on_Reload_timer_timeout"]
+[connection signal="timeout" from="Bomb_timer" to="." method="_on_Bomb_timer_timeout"]
+[connection signal="timeout" from="Invincivility_timer" to="." method="_on_Invincivility_timer_timeout"]

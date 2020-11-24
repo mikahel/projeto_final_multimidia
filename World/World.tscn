@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/World.gd" type="Script" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://Backgrounds/Star_background_1.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Backgrounds/Star_background_3.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Backgrounds/Star_background_2.tscn" type="PackedScene" id=14]
+[ext_resource path="res://UI/Player_bomb_count/bomb_icon2.png" type="Texture" id=15]
+[ext_resource path="res://UI/Player_bomb_count/Bomb_count.gd" type="Script" id=16]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 2 )
@@ -57,6 +59,24 @@ speed = 50
 [node name="Star_background_2" parent="CanvasLayer" instance=ExtResource( 14 )]
 
 [node name="Star_background_3" parent="CanvasLayer" instance=ExtResource( 13 )]
+
+[node name="Bomb_icon" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 87.0924, 4.1595 )
+scale = Vector2( 0.0454554, 0.0448096 )
+texture = ExtResource( 15 )
+
+[node name="Bomb_count" type="Label" parent="CanvasLayer"]
+margin_left = 92.1704
+margin_top = 0.256549
+margin_right = 104.171
+margin_bottom = 9.25655
+custom_fonts/font = ExtResource( 10 )
+text = "00"
+align = 1
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Sound_controller" type="Node" parent="."]
 script = ExtResource( 7 )

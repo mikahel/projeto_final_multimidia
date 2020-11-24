@@ -8,7 +8,3 @@ texture = ExtResource( 2 )
 health = 3
 speed = 65
 point_value = 15
-
-[node name="Hitbox" parent="." index="0" groups=[
-"Insta_kill",
-]]

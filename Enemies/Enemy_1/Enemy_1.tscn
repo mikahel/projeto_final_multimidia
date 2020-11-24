@@ -5,9 +5,9 @@
 [ext_resource path="res://Enemy_bullets/Enemy_bullet_1/Enemy_bullet_1.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10.1627, 6.33216 )
+extents = Vector2( 15.0128, 8.0076 )
 
-[node name="Enemy_3" type="Sprite"]
+[node name="Enemy_1" type="Sprite"]
 position = Vector2( -0.016665, -0.0281291 )
 scale = Vector2( 0.123578, 0.0936542 )
 texture = ExtResource( 2 )
@@ -22,10 +22,11 @@ bullet = ExtResource( 3 )
 ]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2( -0.450642, 0.355611 )
+position = Vector2( -1.46215, 1.69031 )
 scale = Vector2( 2.66667, 4.67391 )
 shape = SubResource( 1 )
 
 [node name="Reload_timer" type="Timer" parent="."]
+wait_time = 0.7
 [connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
 [connection signal="timeout" from="Reload_timer" to="." method="_on_Reload_timer_timeout"]

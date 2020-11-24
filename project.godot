@@ -16,13 +16,13 @@ _global_script_class_icons={
 [application]
 
 config/name="escape-from-2020"
-run/main_scene="res://UI/Title_screen/Title_screen.tscn"
+run/main_scene="res://Game_root.tscn"
 
 [autoload]
 
 Global="*res://Game_managers/Global.gd"
 Savescript="*res://Save/Savescript.gd"
-SpawnScript="*res://Enemy_generator/spawn_script.gd"
+Sound="*res://Sounds/Sound.gd"
 
 [display]
 
@@ -61,6 +61,11 @@ texture={
 shoot={
 "deadzone": 0.5,
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+shoot_bomb={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
 

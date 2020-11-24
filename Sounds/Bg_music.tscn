@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Sounds/SkyFire (Title Screen).ogg" type="AudioStream" id=1]
+[ext_resource path="res://Sounds/Brave Pilots (Menu Screen).ogg" type="AudioStream" id=2]
+[ext_resource path="res://Sounds/Space Heroes_0.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Sounds/Defeated (Game Over Tune).ogg" type="AudioStream" id=4]
+
+[node name="Bg_music" type="Node2D"]
+
+[node name="TitleScreen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+
+[node name="MainMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[node name="WorldBg" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="GameOver" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Space Heroes_0.ogg-3e09701aa823deec455f27e44a5883cc.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Space Heroes_0.ogg"
+dest_files=[ "res://.import/Space Heroes_0.ogg-3e09701aa823deec455f27e44a5883cc.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

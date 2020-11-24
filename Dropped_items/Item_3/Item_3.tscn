@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Dropped_items/Item_1/Item_1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Dropped_items/Item_3/bomb_up.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 75.0163, 82.5366 )
+
+[node name="Item_3" instance=ExtResource( 1 )]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+shape = SubResource( 1 )

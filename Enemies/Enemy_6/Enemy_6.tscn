@@ -11,9 +11,8 @@ position = Vector2( 1.15172, 0.335469 )
 rotation = 4.71239
 scale = Vector2( 0.0212436, 0.027265 )
 texture = ExtResource( 2 )
-speed = 80
+speed = 70
 point_value = 25
-wait_to_shoot = 1.0
 have_bullets = true
 
 [node name="Hitbox" parent="." index="0"]

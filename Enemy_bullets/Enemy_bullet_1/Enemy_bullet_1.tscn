@@ -12,6 +12,7 @@ scale = Vector2( 0.173712, 0.6 )
 z_index = -1
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
+bullet_speed = 100
 
 [node name="Hitbox" type="Area2D" parent="." groups=[
 "Player_damager",

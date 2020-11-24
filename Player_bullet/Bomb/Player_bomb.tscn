@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Player_bullet/Bullet/Player_bullet.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player_bullet/Bomb/creating-a-game-in-pygame-enemy-drops-and-power-ups-red-huli-missile-sprite-png-178_253.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32.561, 79.8947 )
+
+[node name="Player_bomb" instance=ExtResource( 1 )]
+position = Vector2( -1, 0 )
+rotation = 1.5708
+scale = Vector2( 0.0494304, 0.0454031 )
+texture = ExtResource( 2 )
+bullet_speed = 120
+damage = 3
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2( 0, -39.9474 )
+shape = SubResource( 1 )
